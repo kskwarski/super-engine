@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addNewPost } from './postsSlice';
+import { Spinner } from '../../components/Spinner';
 
 export const AddPostForm = () => {
     const [title, setTitle] = useState('');
@@ -36,8 +37,6 @@ export const AddPostForm = () => {
         }
     }
 
-    
-
     const usersOptions = users.map(user => (
         <option key={user.id} value={user.id}>
             { user.name }
@@ -70,6 +69,7 @@ export const AddPostForm = () => {
                 />
                 <button type="button" onClick={onSavePostClicked} disabled={!canSave}>Save Post</button>
             </form>
+            { addRequestStatus === 'pending' && <Spinner text="Saving post.." /> }
         </section>
     )
 } 
