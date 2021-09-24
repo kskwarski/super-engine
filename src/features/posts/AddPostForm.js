@@ -29,7 +29,7 @@ export const AddPostForm = () => {
                 setContent('');
                 setUserId('');
             } catch (err) {
-                console.error('Fiailed to save the post: ', err)
+                console.error('Failed to save the post: ', err)
             } finally {
                 setAddRequestStatus('idle');
             }
