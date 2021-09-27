@@ -3,7 +3,7 @@ import { client } from '../../api/client';
 
 
 const postsAdapter = createEntityAdapter({
-    sortComparer: (a, b) => b.date.localeCompere(a.date)
+    sortComparer: (a, b) => b.date.localeCompare(a.date)
 })
 
 const initialState = postsAdapter.getInitialState({
