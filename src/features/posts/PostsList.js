@@ -7,7 +7,7 @@ import { TimeAgo } from './TimeAgo';
 import { selectAllPosts, fetchPosts } from './postsSlice';
 import { Spinner } from '../../components/Spinner';
 
-const PostExcrept = ({ post }) => {
+let PostExcrept = ({ post }) => {
     return (
         <article className="post-excerpt" key={post.id}>
             <h3>{post.title}</h3>
@@ -24,6 +24,8 @@ const PostExcrept = ({ post }) => {
         </article>
     )
 }
+
+PostExcrept = React.memo(PostExcrept)
 
 export const PostsList = () => {
     const dispatch = useDispatch();
