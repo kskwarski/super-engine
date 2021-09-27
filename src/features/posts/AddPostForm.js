@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addNewPost } from './postsSlice';
+import { selectAllUsers } from '../users/usersSlice'
 import { Spinner } from '../../components/Spinner';
 
 export const AddPostForm = () => {
@@ -12,7 +13,7 @@ export const AddPostForm = () => {
 
     const dispatch = useDispatch();
 
-    const users = useSelector(state => state.users)
+    const users = useSelector(selectAllUsers)
 
     const onTitleChanged = e => setTitle(e.target.value);
     const onContentChanged = e => setContent(e.target.value);
